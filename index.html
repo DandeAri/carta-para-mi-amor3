@@ -14,6 +14,7 @@ body{
     text-align:center;
 }
 
+/* ✨ Carta */
 .carta{
     position:relative;
     top:120px;
@@ -25,8 +26,16 @@ body{
     backdrop-filter: blur(6px);
 }
 
+/* 💞 Nombre animado */
 h1{
     font-size:48px;
+    animation: latido 1.5s infinite;
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
 }
 
 p{
@@ -34,6 +43,7 @@ p{
     line-height:1.6;
 }
 
+/* ❤️ Corazones */
 .corazon{
     position:fixed;
     color:#ff1a75;
@@ -49,6 +59,13 @@ p{
 </head>
 
 <body>
+
+<!-- 💜 BTS - Boy With Luv (música automática) -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/XsX3ATc3FbA?autoplay=1&loop=1&playlist=XsX3ATc3FbA"
+frameborder="0"
+allow="autoplay">
+</iframe>
 
 <div class="carta">
 <h1>Para Ti, Mi Niña Hermosa ❤️</h1>
@@ -72,14 +89,14 @@ function crearCorazon(){
     corazon.classList.add("corazon");
     corazon.innerHTML = "❤";
     corazon.style.left = Math.random()*100 + "vw";
-    corazon.style.fontSize = (Math.random()*20 + 20) + "px";
+    corazon.style.fontSize = (Math.random()*25 + 20) + "px";
     document.body.appendChild(corazon);
 
     setTimeout(()=>{
         corazon.remove();
     },6000);
 }
-setInterval(crearCorazon, 500);
+setInterval(crearCorazon, 400);
 </script>
 
 </body>
