@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Mi Amor ❤️</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+}
+
+.carta{
+    position:relative;
+    top:120px;
+    background: rgba(0,0,0,0.35);
+    padding:40px;
+    margin:auto;
+    width:80%;
+    border-radius:25px;
+    backdrop-filter: blur(6px);
+}
+
+h1{
+    font-size:48px;
+}
+
+p{
+    font-size:22px;
+    line-height:1.6;
+}
+
+.corazon{
+    position:fixed;
+    color:#ff1a75;
+    animation:flotar 6s linear infinite;
+    font-size:24px;
+}
+
+@keyframes flotar{
+    0%{transform:translateY(100vh); opacity:1;}
+    100%{transform:translateY(-10vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="carta">
+<h1>Para Ti, Mi Niña Hermosa ❤️</h1>
+
+<p>
+Mi niña hermosa, te amo desde hace mucho tiempo ❤️.  
+Aunque solo llevemos 4 meses, me alegra muchísimo que hayamos llegado juntos a este San Valentín.<br><br>
+
+De verdad te amo mucho y quiero que este sea solo uno de muchos meses y años más a tu lado. Me haces muy feliz y cada día que pasa me gustas más, me importas más y te amo más.<br><br>
+
+Gracias por estar en mi vida, por tu cariño y por todo lo bonito que me haces sentir. Prometo seguir mejorando por ti y por nosotros, porque lo nuestro vale muchísimo para mí.<br><br>
+
+Te amo mucho, mi Ariana Sánchez 💕🫶  
+Y quiero seguir contigo por muchísimo tiempo más… ❤️✨
+</p>
+</div>
+
+<script>
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤";
+    corazon.style.left = Math.random()*100 + "vw";
+    corazon.style.fontSize = (Math.random()*20 + 20) + "px";
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },6000);
+}
+setInterval(crearCorazon, 500);
+</script>
+
+</body>
+</html>
