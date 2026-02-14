@@ -6,12 +6,41 @@
 
 <style>
 body{
-    margin:0; 
+    margin:0;
     overflow:hidden;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg,#ff758c,#ff7eb3);
     color:white;
     text-align:center;
+}
+
+/* 🌸 Pantalla inicial */
+#inicio{
+    position:fixed; 
+    width:100%;
+    height:100vh;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+.boton{
+    padding:18px 40px;
+    font-size:24px;
+    border:none;
+    border-radius:40px;
+    background:#ff1a75;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.boton:hover{
+    transform:scale(1.1);
 }
 
 /* ✨ Carta */
@@ -24,6 +53,7 @@ body{
     width:80%;
     border-radius:25px;
     backdrop-filter: blur(6px);
+    display:none;
 }
 
 /* 💞 Nombre animado */
@@ -60,14 +90,20 @@ p{
 
 <body>
 
-<!-- 💜 BTS - Boy With Luv (música automática) -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/XsX3ATc3FbA?autoplay=1&loop=1&playlist=XsX3ATc3FbA"
+<!-- 💜 Pantalla inicial -->
+<div id="inicio">
+    <h1>💌 Tengo algo para ti 💌</h1>
+    <button class="boton" onclick="abrirCarta()">Ábreme mi amor ❤️</button>
+</div>
+
+<!-- 🎵 BTS -->
+<iframe id="musica" width="0" height="0"
+src=""
 frameborder="0"
 allow="autoplay">
 </iframe>
 
-<div class="carta">
+<div class="carta" id="carta">
 <h1>Para Ti, Mi Niña Hermosa ❤️</h1>
 
 <p>
@@ -84,19 +120,26 @@ Y quiero seguir contigo por muchísimo tiempo más… ❤️✨
 </div>
 
 <script>
+function abrirCarta(){
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("carta").style.display="block";
+
+    // 🎵 activar BTS
+    document.getElementById("musica").src =
+    "https://www.youtube.com/embed/XsX3ATc3FbA?autoplay=1&loop=1&playlist=XsX3ATc3FbA";
+}
+
 function crearCorazon(){
-    const corazon = document.createElement("div");
+    const corazon=document.createElement("div");
     corazon.classList.add("corazon");
-    corazon.innerHTML = "❤";
-    corazon.style.left = Math.random()*100 + "vw";
-    corazon.style.fontSize = (Math.random()*25 + 20) + "px";
+    corazon.innerHTML="❤";
+    corazon.style.left=Math.random()*100+"vw";
+    corazon.style.fontSize=(Math.random()*25+20)+"px";
     document.body.appendChild(corazon);
 
-    setTimeout(()=>{
-        corazon.remove();
-    },6000);
+    setTimeout(()=>{corazon.remove();},6000);
 }
-setInterval(crearCorazon, 400);
+setInterval(crearCorazon,400);
 </script>
 
 </body>
