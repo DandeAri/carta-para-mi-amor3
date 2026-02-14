@@ -8,13 +8,12 @@
 body{
     margin:0;
     overflow:hidden;
-    font-family: 'Segoe UI', cursive;
+    font-family: 'Segoe Script', cursive;
     background: linear-gradient(135deg,#ff758c,#ff7eb3);
     text-align:center;
-    color:#333;
 }
 
-/* 🌸 Pantalla inicial */
+/* 💌 Pantalla inicial */
 #inicio{
     position:fixed; 
     width:100%;
@@ -29,117 +28,38 @@ body{
 }
 
 .boton{
-    padding:18px 40px;
-    font-size:24px;
+    padding:20px 45px;
+    font-size:26px;
     border:none;
-    border-radius:40px;
+    border-radius:50px;
     background:#ff1a75;
     color:white;
     cursor:pointer;
-    box-shadow:0 0 25px rgba(0,0,0,0.35);
+    box-shadow:0 0 30px rgba(0,0,0,0.4);
     transition:0.3s;
 }
 
 .boton:hover{
-    transform:scale(1.12);
+    transform:scale(1.15);
 }
 
 /* ✉️ Carta papel */
 .carta{
     position:relative;
-    top:80px;
+    top:60px;
     background:#fffdf7;
-    padding:50px;
+    padding:60px;
     margin:auto;
     width:80%;
-    border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    border-radius:25px;
+    box-shadow:0 25px 80px rgba(0,0,0,0.4);
     display:none;
     animation:aparecer 1.5s ease;
 }
 
 @keyframes aparecer{
-    from{transform:scale(0.7); opacity:0;}
-    to{transform:scale(1); opacity:1;}
+    from{transform:scale(0.6) rotate(-3deg); opacity:0;}
+    to{transform:scale(1) rotate(0deg); opacity:1;}
 }
 
-/* 💞 título */
-h1{
-    color:#ff1a75;
-    font-size:42px;
-}
-
-p{
-    font-size:22px;
-    line-height:1.7;
-}
-
-/* ❤️ corazones */
-.corazon{
-    position:fixed;
-    color:#ff1a75;
-    animation:flotar 6s linear infinite;
-    font-size:24px;
-}
-
-@keyframes flotar{
-    0%{transform:translateY(100vh); opacity:1;}
-    100%{transform:translateY(-10vh); opacity:0;}
-}
-</style>
-</head>
-
-<body>
-
-<!-- 💌 Pantalla inicial -->
-<div id="inicio">
-    <h1>💌 Tengo algo muy especial para ti 💌</h1>
-    <button class="boton" onclick="abrirCarta()">Abrir mi carta ❤️</button>
-</div>
-
-<!-- 🎵 Música romántica SIN anuncios -->
-<audio id="musica" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-</audio>
-
-<!-- ✉️ Carta -->
-<div class="carta" id="carta">
-<h1>Para Ti, Mi Niña Hermosa ❤️</h1>
-
-<p>
-Mi niña hermosa, te amo desde hace mucho tiempo ❤️.  
-Aunque solo llevemos 4 meses, me alegra muchísimo que hayamos llegado juntos a este San Valentín.<br><br>
-
-De verdad te amo mucho y quiero que este sea solo uno de muchos meses y años más a tu lado. Me haces muy feliz y cada día que pasa me gustas más, me importas más y te amo más.<br><br>
-
-Gracias por estar en mi vida, por tu cariño y por todo lo bonito que me haces sentir. Prometo seguir mejorando por ti y por nosotros, porque lo nuestro vale muchísimo para mí.<br><br>
-
-Te amo mucho, mi Ariana Sánchez 💕🫶  
-Y quiero seguir contigo por muchísimo tiempo más… ❤️✨
-</p>
-</div>
-
-<script>
-function abrirCarta(){
-    document.getElementById("inicio").style.display="none";
-    document.getElementById("carta").style.display="block";
-
-    // 🎵 reproducir música romántica
-    document.getElementById("musica").play();
-}
-
-function crearCorazon(){
-    const corazon=document.createElement("div");
-    corazon.classList.add("corazon");
-    corazon.innerHTML="❤";
-    corazon.style.left=Math.random()*100+"vw";
-    corazon.style.fontSize=(Math.random()*25+20)+"px";
-    document.body.appendChild(corazon);
-
-    setTimeout(()=>{corazon.remove();},6000);
-}
-setInterval(crearCorazon,400);
-</script>
-
-</body>
-</html>
+/* ✍️ título manuscrito *
