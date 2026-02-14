@@ -97,12 +97,10 @@ p{
     <button class="boton" onclick="abrirCarta()">Abrir mi carta ❤️</button>
 </div>
 
-<!-- 🎵 Música romántica -->
-<iframe id="musica" width="0" height="0"
-src=""
-frameborder="0"
-allow="autoplay">
-</iframe>
+<!-- 🎵 Música romántica SIN anuncios -->
+<audio id="musica" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
 
 <!-- ✉️ Carta -->
 <div class="carta" id="carta">
@@ -126,9 +124,8 @@ function abrirCarta(){
     document.getElementById("inicio").style.display="none";
     document.getElementById("carta").style.display="block";
 
-    // 🎵 música romántica BTS
-    document.getElementById("musica").src =
-    "https://www.youtube.com/embed/XsX3ATc3FbA?autoplay=1&loop=1&playlist=XsX3ATc3FbA";
+    // 🎵 reproducir música romántica
+    document.getElementById("musica").play();
 }
 
 function crearCorazon(){
