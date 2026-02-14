@@ -62,4 +62,107 @@ body{
     to{transform:scale(1) rotate(0deg); opacity:1;}
 }
 
-/* ✍️ título manuscrito *
+/* ✍️ título manuscrito */
+h1{
+    color:#ff1a75;
+    font-size:46px;
+}
+
+p{
+    font-size:22px;
+    line-height:1.8;
+    color:#444;
+}
+
+/* ❤️ corazones */
+.corazon{
+    position:fixed;
+    color:#ff1a75;
+    animation:flotar 6s linear infinite;
+    font-size:24px;
+}
+
+@keyframes flotar{
+    0%{transform:translateY(100vh); opacity:1;}
+    100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* 🌹 pétalos */
+.petalo{
+    position:fixed;
+    color:#ff4d88;
+    font-size:20px;
+    animation:caer 8s linear infinite;
+}
+
+@keyframes caer{
+    0%{transform:translateY(-10vh) rotate(0deg);}
+    100%{transform:translateY(110vh) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 💌 Pantalla inicial -->
+<div id="inicio">
+    <h1>💌 Tengo algo muy especial para ti 💌</h1>
+    <button class="boton" onclick="abrirCarta()">Abrir mi carta ❤️</button>
+</div>
+
+<!-- 🎵 Música romántica -->
+<audio id="musica" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ✉️ Carta -->
+<div class="carta" id="carta">
+<h1>Para Ti, Mi Ariana Sánchez ❤️</h1>
+
+<p>
+Mi niña hermosa, te amo desde hace mucho tiempo ❤️.  
+Aunque solo llevemos 4 meses, me alegra muchísimo que hayamos llegado juntos a este San Valentín.<br><br>
+
+De verdad te amo mucho y quiero que este sea solo uno de muchos meses y años más a tu lado. Me haces muy feliz y cada día que pasa me gustas más, me importas más y te amo más.<br><br>
+
+Gracias por estar en mi vida, por tu cariño y por todo lo bonito que me haces sentir. Prometo seguir mejorando por ti y por nosotros, porque lo nuestro vale muchísimo para mí.<br><br>
+
+Te amo muchísimo mi amor 💕🫶  
+Y quiero seguir contigo hasta viejitos… ❤️✨
+</p>
+</div>
+
+<script>
+function abrirCarta(){
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("carta").style.display="block";
+    document.getElementById("musica").play();
+}
+
+/* ❤️ corazones */
+function crearCorazon(){
+    const c=document.createElement("div");
+    c.className="corazon";
+    c.innerHTML="❤";
+    c.style.left=Math.random()*100+"vw";
+    c.style.fontSize=(Math.random()*25+20)+"px";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),6000);
+}
+setInterval(crearCorazon,400);
+
+/* 🌹 pétalos */
+function crearPetalo(){
+    const p=document.createElement("div");
+    p.className="petalo";
+    p.innerHTML="🌹";
+    p.style.left=Math.random()*100+"vw";
+    p.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),8000);
+}
+setInterval(crearPetalo,900);
+</script>
+
+</body>
+</html>
